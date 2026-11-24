@@ -1,0 +1,13 @@
+{
+  "initialEquity": 1000000,
+  "targetEquity": 20000000,
+  "maxLeverage": 25,
+  "maintenanceRatio": 0.5,
+  "halfSpread": 0.002,
+  "swapLongAnnual": 0.045,
+  "swapShortAnnual": -0.05,
+  "minEquityToTrade": 10000,
+  "maxSayChars": 200,
+  "maxMemoChars": 300,
+  "_note": "halfSpread 用真实价格单位（日元）；掉期按名义本金年化，做多收、做空付（2024 年美日利差约 5%）；强平：净值 < 维持率 × 必要保证金（名义 / 最大杠杆）"
+}

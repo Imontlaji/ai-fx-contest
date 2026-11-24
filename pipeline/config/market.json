@@ -1,0 +1,12 @@
+{
+  "csv": "data/usdjpy-2024.csv",
+  "fallbackCsv": "data/usdjpy-provisional.csv",
+  "seasonStart": "2024-01-01",
+  "seasonEnd": "2024-12-31",
+  "warmupBars": 60,
+  "basePrice": 100,
+  "digits": 3,
+  "windowBars": 60,
+  "_note": "给 AI 的价格 = 真实价格 × k（k = basePrice / 比赛首日开盘价），日期换成 第 N 天；视频与可视化用真实值",
+  "source": "Dukascopy BID 日线（经 huggingface.co/datasets/Yllvar/fx-historical-data，USDJPY_D1.parquet，UTC 日界）；周日短盘并入周一"
+}

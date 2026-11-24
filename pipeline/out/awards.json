@@ -1,0 +1,86 @@
+{
+  "generatedAt": "2026-11-23T17:05:27.259Z",
+  "unfinished": [],
+  "awards": [
+    {
+      "id": "champion",
+      "name": "FX 战士奖",
+      "desc": "比赛结束时净值最高",
+      "winner": {
+        "id": "gemini-4-neon",
+        "name": "Gemini 4 Neon",
+        "value": 7552475
+      },
+      "via": "main"
+    },
+    {
+      "id": "kurumi",
+      "name": "韭留美奖",
+      "desc": "最先被强制平仓（或出局）的选手；没人爆仓则颁给最终亏损最多的选手",
+      "winner": {
+        "id": "glm-5.3",
+        "name": "GLM-5.3",
+        "value": null
+      },
+      "via": "fallback"
+    },
+    {
+      "id": "allin",
+      "name": "梭哈之王",
+      "desc": "持仓日的平均有效杠杆最高（赌狗指数）",
+      "winner": {
+        "id": "gemini-4-neon",
+        "name": "Gemini 4 Neon",
+        "value": 14.931403476547093
+      },
+      "via": "main"
+    },
+    {
+      "id": "diehard",
+      "name": "扛单王",
+      "desc": "连续浮亏持有同一笔仓位的最长交易日数（浮亏 = 收盘净值低于开仓时净值）",
+      "winner": null,
+      "via": "vacant"
+    },
+    {
+      "id": "zen",
+      "name": "佛系奖",
+      "desc": "交易次数最少且没有出局（交易次数 = 开仓、平仓、调仓、反手、止损、止盈、强平的合计）",
+      "winner": {
+        "id": "grok-4.7",
+        "name": "Grok 4.7",
+        "value": 66
+      },
+      "via": "main"
+    },
+    {
+      "id": "fallen",
+      "name": "最惨反转奖",
+      "desc": "曾经排名第一，比赛结束时排名最低的选手（比较“曾经登顶”的选手里的最终名次）",
+      "winner": {
+        "id": "deepseek-v4.1-flash",
+        "name": "DeepSeek V4.1 Flash",
+        "value": 3
+      },
+      "via": "main"
+    },
+    {
+      "id": "handy",
+      "name": "手痒奖",
+      "desc": "交易次数最多",
+      "winner": {
+        "id": "deepseek-v4.1-flash",
+        "name": "DeepSeek V4.1 Flash",
+        "value": 255
+      },
+      "via": "main"
+    },
+    {
+      "id": "phoenix",
+      "name": "浴火重生奖",
+      "desc": "吃过强平但比赛结束时仍然盈利；有多人时取最终净值最高者",
+      "winner": null,
+      "via": "vacant"
+    }
+  ]
+}

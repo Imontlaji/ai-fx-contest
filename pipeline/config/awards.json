@@ -1,0 +1,77 @@
+{
+  "_note": "奖项规则：看结果前定稿，跑完后不改。只在 8 个 AI 之间评，基线机器人只作参照。并列时按 tieBreak 依次比较。",
+  "awards": [
+    {
+      "id": "champion",
+      "name": "FX 战士奖",
+      "desc": "比赛结束时净值最高",
+      "metric": "finalEquity",
+      "pick": "max",
+      "tieBreak": ["maxDrawdown:min", "trades:min"]
+    },
+    {
+      "id": "kurumi",
+      "name": "韭留美奖",
+      "desc": "最先被强制平仓（或出局）的选手；没人爆仓则颁给最终亏损最多的选手",
+      "metric": "firstLiquidationDay",
+      "pick": "min",
+      "fallback": { "metric": "finalEquity", "pick": "min", "onlyIf": "finalEquity<initialEquity" },
+      "tieBreak": ["finalEquity:min"]
+    },
+    {
+      "id": "allin",
+      "name": "梭哈之王",
+      "desc": "持仓日的平均有效杠杆最高（赌狗指数）",
+      "metric": "avgLeverage",
+      "pick": "max",
+      "minValue": 3,
+      "tieBreak": ["maxLeverage:max"]
+    },
+    {
+      "id": "diehard",
+      "name": "扛单王",
+      "desc": "连续浮亏持有同一笔仓位的最长交易日数（浮亏 = 收盘净值低于开仓时净值）",
+      "metric": "longestUnderwaterHold",
+      "pick": "max",
+      "minValue": 10,
+      "tieBreak": ["worstOpenLossPct:max"]
+    },
+    {
+      "id": "zen",
+      "name": "佛系奖",
+      "desc": "交易次数最少且没有出局（交易次数 = 开仓、平仓、调仓、反手、止损、止盈、强平的合计）",
+      "metric": "trades",
+      "pick": "min",
+      "require": "!out",
+      "tieBreak": ["finalEquity:max"]
+    },
+    {
+      "id": "fallen",
+      "name": "最惨反转奖",
+      "desc": "曾经排名第一，比赛结束时排名最低的选手（比较“曾经登顶”的选手里的最终名次）",
+      "metric": "finalRankAmongEverLeaders",
+      "pick": "max",
+      "require": "everLed",
+      "minValue": 3,
+      "tieBreak": ["peakToFinalDrop:max"]
+    },
+    {
+      "id": "handy",
+      "name": "手痒奖",
+      "desc": "交易次数最多",
+      "metric": "trades",
+      "pick": "max",
+      "tieBreak": ["finalEquity:min"]
+    },
+    {
+      "id": "phoenix",
+      "name": "浴火重生奖",
+      "desc": "吃过强平但比赛结束时仍然盈利；有多人时取最终净值最高者",
+      "metric": "finalEquity",
+      "pick": "max",
+      "require": "liquidations>0 && finalEquity>initialEquity",
+      "tieBreak": []
+    }
+  ],
+  "_unawarded": "某个奖项没有选手满足条件（require / minValue / onlyIf）时空缺，视频如实说明“本奖项空缺”"
+}
